@@ -19,11 +19,12 @@ public class AppiumConfig {
         
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "Appium");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "Android");
+        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "12");
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Emulator");
         capabilities.setCapability(MobileCapabilityType.APP, "D:\\Download\\jforce-announcement1.apk");
-        
+        System.out.println(" after app path");
         URL url=new URL  ("http://localhost:4723");
+        System.out.println(" URL " + url);
         
       //  capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "your_app_package");
      ///   capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "your_app_activity");
@@ -31,6 +32,8 @@ public class AppiumConfig {
         
         
         AndroidDriver <WebElement> driver = new AndroidDriver<WebElement>(url,capabilities);
+        
+        System.out.println(" aNDROID dRIVER" + driver.getCurrentUrl() +" and "+ driver.getCapabilities() );
     
     }
 }
